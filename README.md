@@ -1,2 +1,2 @@
 # sorting-exploration
- Play around with different sorting algorithms
+ Playing around with different sorting algorithms
