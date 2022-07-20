@@ -54,10 +54,13 @@ def merge(nums1, nums2):
             res.append(nums2[i2])
             i2 += 1
     if i1 < len(nums1):
-        res.extend(nums1)
+        res.extend(nums1[i1:])
     elif i2 < len(nums2):
-        res.extend(nums2)
+        res.extend(nums2[i2:])
     return res
+
+def test():
+    print("Test")
 
 def merge_sort(nums):
     if len(nums) <= 1:

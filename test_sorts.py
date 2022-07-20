@@ -16,7 +16,8 @@ parser.add_argument("-q", help="call Quicksort", action='store_true')
 parser.add_argument("-m", help="call Merge sort", action='store_true')
 parser.add_argument("-r", help="call Random sort", action='store_true')
 args = parser.parse_args()
-print(args)
+#print(args)
+
 
 if args.i or args.A:
     print("#"*20)
@@ -54,7 +55,7 @@ if args.m or args.A:
         arr = [randint(0, 100) for _ in range(int(args.length))]
         copy = arr[:]
         print("Input arr:", copy)
-        arr = sort.quick(arr)
+        arr = sort.merge_sort(arr)
         print("Array after sort:", arr)
         assert(arr == sorted(copy))
 
