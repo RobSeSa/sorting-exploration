@@ -4,7 +4,7 @@ Playing around with different sorting algorithms
 # Results:
 - default Python sort (Tim sort) is awesome !
 
-![Plots](sort_plots.pdf)
+![Plots](sort_plots.png)
 
 # Steps
 - code sorts
