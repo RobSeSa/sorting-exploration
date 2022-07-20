@@ -39,9 +39,35 @@ def quick(nums):
             greater.append(num)
     return quick(less) + equal + quick(greater)
 
+### Merge Sort ###
+def merge(nums1, nums2):
+    # nums1 and nums2 must be sorted
+    i1, i2 = 0, 0
+    res = []
+    while i1 < len(nums1) and i2 < len(nums2):
+        if nums1[i1] < nums2[i2]:
+            res.append(nums1[i1])
+            i1 += 1
+        else:
+            res.append(nums2[i2])
+            i2 += 1
+    if i1 < len(nums1):
+        res.extend(nums1)
+    elif i2 < len(nums2):
+        res.extend(nums2)
+    return res
 
-def merge(nums):
-    raise NotImplementedError
+def merge_sort(nums):
+    if len(nums) <= 1:
+        return nums
+    elif len(nums) == 2:
+        return nums if nums[0] < nums[1] else [nums[1], nums[0]]
+    
+    left = merge_sort(nums[:len(nums)//2])
+    right = merge_sort(nums[len(nums)//2:])
+    return merge(left, right)
+    
+
 
 def bubble(nums):
     raise NotImplementedError
