@@ -1,5 +1,10 @@
 # sorting-exploration
- Playing around with different sorting algorithms
+Playing around with different sorting algorithms
+
+# Results:
+- default Python sort (Tim sort) is awesome !
+
+![Plots](sort_plots.pdf)
 
 # Steps
 - code sorts
