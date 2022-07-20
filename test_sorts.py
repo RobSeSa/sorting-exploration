@@ -6,13 +6,14 @@ import sort
 
 # parse arguments to see which sort to run
 parser = argparse.ArgumentParser()
-parser.add_argument("length", help="Number of elements in the array to be sorted", action='count', default=5)
-parser.add_argument("iter", help="Number of times to repeat sorting algo", action='count', default=1)
+parser.add_argument("length", help="Number of elements in the array to be sorted", action='count', default=4)
+parser.add_argument("iter", help="Number of times to repeat sorting algo", action='count', default=0)
 parser.add_argument("-A", help="call All sorting algorithms", action='store_true')
 parser.add_argument("-q", help="call Quicksort", action='store_true')
 parser.add_argument("-m", help="call Merge sort", action='store_true')
 parser.add_argument("-r", help="call Random sort", action='store_true')
 args = parser.parse_args()
+print(args)
 
 if args.m or args.A:
     print("#"*20)
