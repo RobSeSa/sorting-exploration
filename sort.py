@@ -18,9 +18,27 @@ def rand(nums):
         random.shuffle(nums)
     return
 
-
-def quick(nums):
+def bucket(nums):
     raise NotImplementedError
+
+### Quick Sort ###
+def quick(nums):
+    less = []
+    equal = []
+    greater = []
+    if len(nums) <= 1:
+        return nums
+    pivot_index = random.randint(0, len(nums)-1)
+    pivot = nums[pivot_index]
+    for i, num in enumerate(nums):
+        if num == pivot:
+            equal.append(num)
+        elif num < pivot:
+            less.append(num)
+        else:
+            greater.append(num)
+    return quick(less) + equal + quick(greater)
+
 
 def merge(nums):
     raise NotImplementedError
