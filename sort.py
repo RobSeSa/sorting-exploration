@@ -90,10 +90,35 @@ def insertion(nums):
                 lowest_index = j
         # swap to front
         nums[i], nums[lowest_index] = nums[lowest_index], nums[i]
+    return nums
 
 
 ###################
 ### Bucket Sort ###
 ###################
-def bucket(nums):
-    raise NotImplementedError
+def bucket(nums, n):
+    max_val = max(nums) + 0.000001
+    nums = [num / max_val for num in nums]
+    arr = []
+    
+    for _ in range(n):
+        arr.append([]) # create array of n buckets (lists)
+
+    # Put array elements in different buckets 
+    for j in nums:
+        index_b = int(n * j) 
+        arr[index_b].append(j)
+      
+    # Sort individual buckets 
+    for i in range(n):
+        arr[i] = insertion(arr[i])
+          
+    # concatenate the result
+    k = 0
+    for i in range(n):
+        for j in range(len(arr[i])):
+            nums[k] = arr[i][j]
+            k += 1
+    
+    nums = [int(round(num * max_val)) for num in nums]
+    return nums
