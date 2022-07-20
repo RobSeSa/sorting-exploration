@@ -10,18 +10,18 @@ def is_sorted(nums):
             return False
     return True
 
-
-
+###################
+### Random Sort ###
+###################
 def rand(nums):
     # randomly do swaps until nums is sorted
     while not is_sorted(nums):
         random.shuffle(nums)
     return
 
-def bucket(nums):
-    raise NotImplementedError
-
+##################
 ### Quick Sort ###
+##################
 def quick(nums):
     less = []
     equal = []
@@ -39,7 +39,9 @@ def quick(nums):
             greater.append(num)
     return quick(less) + equal + quick(greater)
 
+##################
 ### Merge Sort ###
+##################
 def merge(nums1, nums2):
     # nums1 and nums2 must be sorted
     i1, i2 = 0, 0
@@ -66,8 +68,32 @@ def merge_sort(nums):
     left = merge_sort(nums[:len(nums)//2])
     right = merge_sort(nums[len(nums)//2:])
     return merge(left, right)
-    
+
+#######################
+### Insertion Sort ###
+#######################
+def insertion(nums):
+    '''
+    find the lowest elem n times and move it to the front
+
+    find lowest O(n)
+    swap to front O(1)
+    repeat n times O(n)
+    '''
+    for i in range(0,len(nums)):
+        # find lowest
+        lowest = nums[i]
+        lowest_index = i
+        for j in range(i+1, len(nums)):
+            if nums[j] < lowest:
+                lowest = nums[j]
+                lowest_index = j
+        # swap to front
+        nums[i], nums[lowest_index] = nums[lowest_index], nums[i]
 
 
-def bubble(nums):
+###################
+### Bucket Sort ###
+###################
+def bucket(nums):
     raise NotImplementedError
